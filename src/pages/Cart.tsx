@@ -43,7 +43,7 @@ const TopButton = styled.button`
 `;
 
 const TopTexts = styled.div`
-
+    margin: 10px 0;
 `;
 
 const TopText = styled.span`
