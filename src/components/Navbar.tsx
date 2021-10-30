@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 //@ts-ignore
 import Badge from '@mui/material/Badge';
+import { Link } from 'react-router-dom';
 
 
 const Container = styled.div`
@@ -67,6 +68,8 @@ const MenuItem = styled.div`
 `
 
 const Navbar = () => {
+    const auth = true;
+
     return (
         <Container>
             <Wrapper>
@@ -74,15 +77,26 @@ const Navbar = () => {
                     <Language>EN</Language>
                     <SearchContainer>
                         <Input />
-                        <Search style={{color: 'grey', fontSize: '16px'}}/>
+                        <Search style={{ color: 'grey', fontSize: '16px' }} />
                     </SearchContainer>
                 </Left>
                 <Middle>
                     <Logo>Lama</Logo>
                 </Middle>
                 <Right>
-                    <MenuItem>Register</MenuItem>
-                    <MenuItem>Sign in</MenuItem>
+                    {!auth && <React.Fragment>
+                        <MenuItem>
+                            <Link to="/register">
+                                Register
+                            </Link>
+                        </MenuItem>
+                        <MenuItem>
+                            <Link to="/login">
+                                Sign in
+                            </Link>
+                        </MenuItem>
+                    </React.Fragment>}
+                    {auth && <MenuItem>Out</MenuItem>}
                     <MenuItem>
                         <Badge badgeContent={4} color="primary">
                             <ShoppingCartOutlined />
