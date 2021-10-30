@@ -96,7 +96,7 @@ const Navbar = () => {
                             </Link>
                         </MenuItem>
                     </React.Fragment>}
-                    {auth && <MenuItem>Out</MenuItem>}
+                    {auth && <MenuItem>Sign out</MenuItem>}
                     <MenuItem>
                         <Badge badgeContent={4} color="primary">
                             <ShoppingCartOutlined />
